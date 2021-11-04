@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Back{% endblock %}
+
+{% block body %}
+    <h1>Back</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ back.id }}</td>
+            </tr>
+            <tr>
+                <th>Back</th>
+                <td>{{ back.back }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_back_index') }}">back to list</a>
+
+    <a href="{{ path('back_back_edit', {'id': back.id}) }}">edit</a>
+
+    {{ include('back/back/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Front{% endblock %}
+
+{% block body %}
+    <h1>Create new Front</h1>
+
+    {{ include('front/front/_form.html.twig') }}
+
+    <a href="{{ path('front_front_index') }}">back to list</a>
+{% endblock %}

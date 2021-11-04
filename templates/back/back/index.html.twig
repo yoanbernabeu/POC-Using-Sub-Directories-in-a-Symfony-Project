@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Back index{% endblock %}
+
+{% block body %}
+    <h1>Back index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Back</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for back in backs %}
+            <tr>
+                <td>{{ back.id }}</td>
+                <td>{{ back.back }}</td>
+                <td>
+                    <a href="{{ path('back_back_show', {'id': back.id}) }}">show</a>
+                    <a href="{{ path('back_back_edit', {'id': back.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_back_new') }}">Create new</a>
+{% endblock %}
